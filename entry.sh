@@ -9,5 +9,7 @@ chmod 755 /home /home/*
 chmod 550 /home/*/.ssh
 chmod 440 /home/*/.ssh/authorized_keys
 
+chmod o-w /dev/shm /tmp # remove any writable places.
+
 $@
 
