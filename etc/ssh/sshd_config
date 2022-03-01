@@ -38,7 +38,6 @@
 
 # The default is to check both .ssh/authorized_keys and .ssh/authorized_keys2
 # but this is overridden so installations will only check .ssh/authorized_keys
-AuthorizedKeysFile	.ssh/authorized_keys
 
 #AuthorizedPrincipalsFile none
 
@@ -110,8 +109,9 @@ Banner none
 #Subsystem	sftp	/usr/lib/ssh/sftp-server
 
 Subsystem	sftp	internal-sftp
-ChrootDirectory %h
+ChrootDirectory /home/%u
 ForceCommand internal-sftp
+AuthorizedKeysFile	/home/%u/.ssh/authorized_keys
 
 # Example of overriding settings on a per-user basis
 #	X11Forwarding no
